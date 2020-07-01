@@ -54,6 +54,10 @@ app.get("/register", function(req, res)  {
     res.render("register");
   
 });
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+  });
 app.get("/secrets",function(req,res){
     if(req.isAuthenticated()){
         res.render("secrets");
